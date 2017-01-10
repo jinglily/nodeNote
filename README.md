@@ -1,5 +1,5 @@
 # nodeNote
 
-[git命令](../note001)
+- [git命令](../note001)
 
-[node安装](../note002)
+- [node安装](../note002)
