@@ -54,3 +54,41 @@ module.exports = function(){
 </html>
 
 ```
+
+下载webpack和webpack-dev-server
+```
+# 安装并保存在项目依赖中
+$ npm install --save-dev webpack webpack-dev-server
+# 如果想直接在命令行使用webpack或webpack-dev-server命令，全局安装
+```
+创建webpack的配置文件
+```
+$ touch wenpack.config.js
+```
+`#请注意webpack.config.js这个文件名，默认情况下需要严格按照这个明明，不然会报Output filename not configured的错误；另外，如果不按这个命名，那么webpack运行的时候通过--conf这个参数指定配置文件，例如：webpack --config conf.js`
+
+进行基本配置
+```
+var path = require('path');
+module.exports = {
+  entry: path.resolve(_dirname, 'src/index.js'),
+  output: {
+    path: path.resolve(_dirname, 'build'),
+    filename: 'bundle.js'
+  },
+};
+```
+执行webpack命令，这里我们用的是项目内暗黄的webpack
+```
+$ ./node_moduules/.bin/webpack
+```
+可以在控制台看到如下信息
+```
+Hash: cf7cc9272c664f542fcb
+Version: webpack 1.13.0
+Time: 80ms
+    Asset     Size  Chunks             Chunk Names
+bundle.js  2.04 kB       0  [emitted]  main
+   [0] ./src/index.js 60 bytes {0} [built]
+   [1] ./src/component.js 57 bytes {0} [built]
+```
